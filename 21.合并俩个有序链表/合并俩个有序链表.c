@@ -8,17 +8,17 @@
 
 
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
-    //å…ˆåˆ¤æ–­æ˜¯å¦æœ‰é“¾è¡¨ä¸ºç©ºï¼Œå¦‚æœæœ‰ï¼Œåˆ™è¿”å›å¦å¤–ä¸€ä¸ªé“¾è¡¨
+    //ÏÈÅĞ¶ÏÊÇ·ñÓĞÁ´±íÎª¿Õ£¬Èç¹ûÓĞ£¬Ôò·µ»ØÁíÍâÒ»¸öÁ´±í
     if(l1==NULL)
     return l2;
     if(l2==NULL)
     return l1;
     struct ListNode* pcurrent1=l1;
     struct ListNode* pcurrent2=l2;
-    //åˆ›å»ºæ–°çš„é“¾è¡¨å¤´ç»“ç‚¹
+    //´´½¨ĞÂµÄÁ´±íÍ·½áµã
     struct ListNode* newlist=NULL;
     struct ListNode* newhead=NULL;
-    //å¯¹ä¿©ä¸ªé“¾è¡¨ä¸­çš„å…ƒç´ æŒ¨ä¸ªè¿›è¡Œæ¯”è¾ƒï¼Œä¾æ¬¡ç”¨å°¾æ’çš„æ–¹æ³•æ’å…¥æ–°é“¾è¡¨
+    //¶ÔÁ©¸öÁ´±íÖĞµÄÔªËØ°¤¸ö½øĞĞ±È½Ï£¬ÒÀ´ÎÓÃÎ²²åµÄ·½·¨²åÈëĞÂÁ´±í
     while(pcurrent1&&pcurrent2)
     {
         if(pcurrent1->val<pcurrent2->val)
@@ -50,16 +50,16 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
             }
         }
     }
-    //å¦‚æœé“¾è¡¨1æ’å®Œï¼Œåˆ™å°†é“¾è¡¨2ä¸­æ‰€æœ‰æœªæ’å…ƒç´ æ’åˆ°é“¾è¡¨æœ«å°¾
+    //Èç¹ûÁ´±í1²åÍê£¬Ôò½«Á´±í2ÖĞËùÓĞÎ´²åÔªËØ²åµ½Á´±íÄ©Î²
     if(NULL==pcurrent1)
     {
         newlist->next=pcurrent2;
     }
-    //å¦‚æœé“¾è¡¨2æ’å®Œï¼Œåˆ™å°†é“¾è¡¨1ä¸­æ‰€æœ‰æœªæ’å…ƒç´ æ’åˆ°é“¾è¡¨æœ«å°¾
+    //Èç¹ûÁ´±í2²åÍê£¬Ôò½«Á´±í1ÖĞËùÓĞÎ´²åÔªËØ²åµ½Á´±íÄ©Î²
     else
     {
         newlist->next=pcurrent1;
     }
-    //è¿”å›æ–°é“¾è¡¨å¤´ç»“ç‚¹çš„åœ°å€ã€‚
+    //·µ»ØĞÂÁ´±íÍ·½áµãµÄµØÖ·¡£
     return newhead;
 }
